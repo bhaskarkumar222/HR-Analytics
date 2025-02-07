@@ -18,21 +18,21 @@ The objective was to **Analyse employee attrition trends** and derive actionable
 
 #### Attrition Analysis
 
-1. What is the overall attrition rate?
+**1. What is the overall attrition rate?**
 ``` sql
 SELECT 
       SUM(CASE WHEN attrition = "yes" THEN 1 END) / COUNT(employeeid)*100 AS attrition_rate
 FROM 	employees;
 ```
 
-2. What is the attrition rate by department?
+**2. What is the attrition rate by department?**
 ```sql
 SELECT   department,
          SUM(CASE WHEN attrition = 'yes' THEN 1 END) / COUNT(employeeid)*100 attrition_rate
 FROM      employees
 GROUP BY department;
 ```
-3. What is the attrition rate by job role?
+**3. What is the attrition rate by job role?**
 ```sql
 SELECT   jobrole,
          SUM(CASE WHEN attrition = 'yes' THEN 1 END)/ COUNT(employeeid)* 100 AS attrition_rate
@@ -40,14 +40,14 @@ FROM     employees
 GROUP BY jobrole
 ORDER BY attrition_rate DESC;
 ```
-4. What is the average tenure of employees who left vs. those who stayed?
+**4. What is the average tenure of employees who left vs. those who stayed?**
 ```sql
 SELECT   attrition,
          AVG(yearsatcompany) AS average_tenure
 FROM     employees
 GROUP BY attrition;
 ```
-5. What is the attrition rate by gender?
+**5. What is the attrition rate by gender?**
 ```sql
 SELECT   gender,
          SUM(CASE WHEN attrition = 'yes' THEN 1 END)/ COUNT(employeeid)* 100 AS attrition_rate
@@ -55,14 +55,14 @@ FROM     employees
 GROUP BY gender;
 
 ```
-6. What is the average salary of employees who left vs. those who stayed?
+**6. What is the average salary of employees who left vs. those who stayed?**
 ```sql
 SELECT   attrition,
          AVG(salary) AS AVG_salary
 FROM     employees
 GROUP BY attrition; 
 ```
-7. How does attrition vary by performance rating?
+**7. How does attrition vary by performance rating?**
 ```sql
 SELECT   Performancerating,
          COUNT(e.employeeid) AS total_employees,
@@ -71,14 +71,14 @@ FROM     employees e JOIN Performancerating p
 ON       e.employeeid = p.employeeid
 GROUP BY Performancerating;
 ```
-8. What is the attrition rate for employees who worked overtime vs. those who didn’t?
+**8. What is the attrition rate for employees who worked overtime vs. those who didn’t?**
 ```sql
 SELECT   overtime,
          SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END)/ COUNT(Employeeid)*100 AS attrition_rate
 FROM     employees
 GROUP BY overtime;
 ```
-9.  What is the attrition rate by age group?
+**9.  What is the attrition rate by age group?**
 ```sql
 WITH Age_group AS (
 SELECT   attrition, employeeid,
@@ -99,7 +99,7 @@ ORDER BY age_group;
 ```
 #### Performance Analysis
 
-1.	What is the average performance rating by department or job role?
+**1.	What is the average performance rating by department or job role?**
 ```sql
 SELECT   department,
          AVG(Performancerating) AS Performance_rating
@@ -107,7 +107,7 @@ FROM     employees e JOIN Performancerating p
 ON       e.employeeid = p.employeeid
 GROUP BY department;
 ```
-2.	How does performance vary by tenure?
+**2.	How does performance vary by tenure?**
 ```sql
 SELECT   yearsatcompany,
          AVG(performancerating) AS Avg_performance_rating
@@ -116,7 +116,7 @@ ON       e.employeeid = p.employeeid
 GROUP BY yearsatcompany
 ORDER BY yearsatcompany;
 ```
-3.	What is the distribution of performance ratings (e.g., high, medium, low)?
+**3.	What is the distribution of performance ratings (e.g., high, medium, low)?**
 ```sql
 SELECT   CASE WHEN Performancerating >= 4 THEN 'High'
               WHEN Performancerating = 3 THEN 'Medium'
@@ -125,7 +125,7 @@ SELECT   CASE WHEN Performancerating >= 4 THEN 'High'
 FROM     performancerating
 GROUP BY preformance_level;
 ```
-4.	What is the performance trend over time (e.g., quarterly or yearly)?
+**4.	What is the performance trend over time (e.g., quarterly or yearly)?**
 ```sql
 SELECT   CONCAT('Q ', QUARTER(ReviewDate)) AS `Quarter`, 
          AVG(CASE WHEN YEAR(ReviewDate) = '2020' THEN performancerating END) AS Year_20,
@@ -134,7 +134,7 @@ SELECT   CONCAT('Q ', QUARTER(ReviewDate)) AS `Quarter`,
 FROM     performancerating
 GROUP BY CONCAT('Q ', QUARTER(ReviewDate));
 ```
-5.	How does performance vary by gender?
+**5.	How does performance vary by gender?**
 ```sql
 SELECT   gender, 
          AVG(performancerating) AS avg_performance_rating
@@ -142,7 +142,7 @@ FROM     employees e JOIN performancerating p
 ON       e.employeeid = p.employeeid
 GROUP BY gender;
 ```
-6.	How does performance vary by age group?
+**6.	How does performance vary by age group?**
 ```sql
 WITH Age_group AS (
 SELECT   attrition, performancerating,
@@ -162,7 +162,7 @@ FROM     age_group
 GROUP BY age_group
 ORDER BY age_group;
 ```
-7.	What is the performance of employees who left vs. those who stayed?
+**7.	What is the performance of employees who left vs. those who stayed?**
 ```sql
 SELECT   attrition,
          AVG(performancerating) AS avg_performance_rating
@@ -170,7 +170,7 @@ FROM     employees e JOIN performancerating p
 ON       e.EmployeeID = p.EmployeeID
 GROUP BY attrition;
 ```
-8.	What is the performance of employees by manager?
+**8.	What is the performance of employees by manager?**
 ```sql
 SELECT   e.employeeid as Manager_ID, 
          Avg(Performancerating) AS avg_performance_rating
@@ -182,12 +182,12 @@ GROUP BY e.employeeid;
 
 #### Employee Sentiment Analysis
 
-1.	What is the overall employee satisfaction score?
+**1.	What is the overall employee satisfaction score?**
 ```sql
 SELECT   AVG(jobsatisfaction) AS avg_satisfaction_score
 FROM    performancerating;
 ```
-2.	How does satisfaction vary by department?
+**2.	How does satisfaction vary by department?**
 ```sql
 SELECT   department,
          AVG(jobsatisfaction) AS avg_satisfaction_score
@@ -195,7 +195,7 @@ FROM     employees e JOIN performancerating p
 ON       e.EmployeeID = p.EmployeeID
 GROUP BY department;
 ```
-3.	What is the satisfaction trend over time?
+**3.	What is the satisfaction trend over time?**
 ```sql
 SELECT   CONCAT('Q ', QUARTER(ReviewDate)) AS `Quarter`, 
          AVG(CASE WHEN YEAR(ReviewDate) = '2020' THEN jobsatisfaction END) AS Year_20,
@@ -204,7 +204,7 @@ SELECT   CONCAT('Q ', QUARTER(ReviewDate)) AS `Quarter`,
 FROM     performancerating
 GROUP BY CONCAT('Q ', QUARTER(ReviewDate));
 ```
-4.	How does satisfaction correlate with attrition or performance?
+**4.	How does satisfaction correlate with attrition or performance?**
 ```sql
 SELECT   Attrition, 
          AVG(performancerating) AS AVG_performance,
@@ -213,7 +213,7 @@ FROM     employees e JOIN performancerating p
 ON       e.EmployeeID = p.EmployeeID
 GROUP BY Attrition;
 ```
-5.	What are the top factors affecting employee satisfaction (e.g., salary, work-life balance and Job role)?
+**5.	What are the top factors affecting employee satisfaction (e.g., salary, work-life balance and Job role)?**
 ```sql
 SELECT 	
          CASE WHEN salary < '50000' THEN 'Low'
@@ -240,7 +240,7 @@ ON       e.EmployeeID = p.EmployeeID
 GROUP BY JobRole
 ORDER BY JobRole DESC;
 ```
-6.	How does satisfaction vary by gender?
+**6.	How does satisfaction vary by gender?**
 ```sql
 SELECT   gender,
          AVG(jobsatisfaction) AS avg_satisfaction_score
@@ -248,7 +248,7 @@ FROM     employees e JOIN performancerating p
 ON       e.EmployeeID = p.EmployeeID
 GROUP BY gender;
 ```
-7.    How does satisfaction vary by age group?
+**7.    How does satisfaction vary by age group?**
 ```sql
 WITH Age_group AS (
 SELECT   attrition, jobsatisfaction,
@@ -268,7 +268,7 @@ FROM     age_group
 GROUP BY age_group
 ORDER BY age_group;
 ```
-8.	What job satisfactions by employees and job title?
+**8.	What job satisfactions by employees and job title?**
 ```sql
 select   jobrole, 
          COUNT(CASE when JobSatisfaction = 1 then e.employeeid end )as 's1' ,
