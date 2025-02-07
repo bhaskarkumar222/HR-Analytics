@@ -282,11 +282,12 @@ GROUP BY JobRole;
 ```
 
 #### Dashboard Development: 
-   - Built an **interactive Power BI dashboard** featuring:
+   - Built an **interactive Power BI dashboard** featuring: <a href="https://app.powerbi.com/view?r=eyJrIjoiM2ZmMzgyYjctNjkyOS00ODc1LTk1YTAtMzFmNThhNTM4NTlhIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9">View Dashboard</a>
      - **Total Attrition, Attrition Rate & Average performancing Rating**
      - **Attrition by Age Group, Gender, Department, Salary, and Experience**
      - **Job Satisfaction Analysis**
      - Created visualizations using **Power BI** (bar charts, pie charts, Matrix).
+     
 
 ![image alt](https://github.com/bhaskarkumar222/HR-Analytics/blob/88e939ef6611997413c2b87e7d8a02b034139717/HR%20Dashboard_SS.png)
 
