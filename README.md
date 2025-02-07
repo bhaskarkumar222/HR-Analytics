@@ -9,6 +9,7 @@ To address this, we developed an **HR Analytics Dashboard** that provides insigh
 ## Tools & Skills Used
 * **SQL** – Querying and analyzing HR databases for attrition trends
 * **Power BI** – Interactive dashboards for insights & trend analysis.
+* <a href="https://app.powerbi.com/view?r=eyJrIjoiM2ZmMzgyYjctNjkyOS00ODc1LTk1YTAtMzFmNThhNTM4NTlhIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9">View Dashboard</a>
 
 ## Task  
 The objective was to **Analyse employee attrition trends** and derive actionable insights. This involved identifying **key factors** influencing turnover, such as age, job role, salary, and performance. The findings aim to support strategic decision-making to enhance employee retention.
@@ -282,7 +283,7 @@ GROUP BY JobRole;
 ```
 
 #### Dashboard Development: 
-   - Built an **interactive Power BI dashboard** featuring: <a href="https://app.powerbi.com/view?r=eyJrIjoiM2ZmMzgyYjctNjkyOS00ODc1LTk1YTAtMzFmNThhNTM4NTlhIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9">View Dashboard</a>
+   - Built an **interactive Power BI dashboard** featuring: 
      - **Total Attrition, Attrition Rate & Average performancing Rating**
      - **Attrition by Age Group, Gender, Department, Salary, and Experience**
      - **Job Satisfaction Analysis**
