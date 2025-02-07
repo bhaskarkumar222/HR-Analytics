@@ -52,7 +52,10 @@ The objective was to **Analyse employee attrition trends** and derive actionable
      - **Total Attrition, Attrition Rate & Average performancing Rating**
      - **Attrition by Age Group, Gender, Department, Salary, and Experience**
      - **Job Satisfaction Analysis**
-     - Created visualizations using **Power BI** (bar charts, pie charts, Matrix).  
+     - Created visualizations using **Power BI** (bar charts, pie charts, Matrix).
+
+![image alt](https://github.com/bhaskarkumar222/HR-Analytics/blob/88e939ef6611997413c2b87e7d8a02b034139717/HR%20Dashboard_SS.png)
+
 
 ## Key Findings & Insights of the HR Analytics Employee Attrition Project
 The overall **attrition rate is 16.12%** which Requires HR intervention, with young employees age between 21-30 years and those with low salaries being most affected.
