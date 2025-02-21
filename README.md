@@ -1,5 +1,7 @@
 # HR Analytics Employee Attrition Dashboard 
-![image alt](https://github.com/bhaskarkumar222/HR-Analytics/blob/1aa0c9e6534d2f707a52b7bff27a5b9016bcf372/HR-Analytics-1170x630.jpg)
+
+<img src="https://github.com/bhaskarkumar222/HR-Analytics/blob/1aa0c9e6534d2f707a52b7bff27a5b9016bcf372/HR-Analytics-1170x630.jpg" alt="Sales Analysis Dashboard" width="1000" height="300"/>
+
 
 ## Situation  
 Employee attrition is a major challenge for organizations, leading to increased hiring costs, reduced productivity, and lower employee morale. HR teams need data-driven insights to understand **why employees leave, which departments are affected the most, and what factors contribute to attrition**.  
